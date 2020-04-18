@@ -21,8 +21,8 @@ const Login = ({ loginForm, updateLoginForm, login }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input name="email" type="email" value={loginForm.email} onChange={handleInputChange} />
-      <input name="password" type="password" value={loginForm.password} onChange={handleInputChange} />
+      <input placeholder="you@email.com" name="email" type="email" value={loginForm.email} onChange={handleInputChange} />
+      <input placeholder="password" name="password" type="password" value={loginForm.password} onChange={handleInputChange} />
       <input type="submit" value="login" />
     </form>
   )
