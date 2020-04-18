@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
 const MoviesContainer = () => {
   return (
@@ -8,4 +9,10 @@ const MoviesContainer = () => {
   )
 }
 
-export default MoviesContainer
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser
+  }
+}
+
+export default connect(mapStateToProps)(MoviesContainer)
