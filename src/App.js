@@ -5,6 +5,7 @@ import { getCurrentUser } from './actions/currentUser';
 import Nav from './components/Nav';
 import MainContainer from './components/MainContainer';
 
+
 class App extends Component {
 
   componentDidMount(){

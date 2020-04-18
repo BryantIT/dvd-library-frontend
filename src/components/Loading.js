@@ -1,10 +1,13 @@
 import React from 'react';
-import { EatLoading } from 'react-loadingg';
+
 
 const Loading = () => {
   return (
-    <EatLoading />
+    <div>
+      <h1>Your Library is currently loading....</h1>
+    </div>
+
   )
 }
 
-export default Loading
+export default Loading;
