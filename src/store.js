@@ -5,6 +5,8 @@ import loginForm from './reducers/loginForm';
 import userMovies from './reducers/userMovies';
 import userBooks from './reducers/userBooks';
 import signupForm from './reducers/signupForm';
+import newBookForm from './reducers/newBookForm';
+import newMovieForm from './reducers/newMovieForm';
 import thunk from 'redux-thunk';
 
 const reducer = combineReducers({
@@ -13,7 +15,9 @@ const reducer = combineReducers({
   loginForm,
   userMovies,
   userBooks,
-  signupForm
+  signupForm,
+  newBookForm,
+  newMovieForm
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
