@@ -8,8 +8,8 @@ import Signup from './components/Signup';
 import MainContainer from './components/MainContainer';
 import BooksContainer from './components/BooksContainer';
 import MoviesContainer from './components/MoviesContainer';
-import NewMoviesForm from './components/NewMovies';
-import NewBooksForm from './components/NewBooks';
+import NewMovieForm from './components/NewMovieForm';
+import NewBookForm from './components/NewBookForm';
 import Home from './components/Home';
 import { Route, Switch, withRouter  } from 'react-router-dom';
 
@@ -31,8 +31,8 @@ class App extends Component {
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/movies' component={MoviesContainer} />
           <Route exact path='/books' component={BooksContainer} />
-          <Route exact path='/movies/new' component={NewMoviesForm} />
-          <Route exact path='/books/new' component={NewBooksForm} />
+          <Route exact path='/movies/new' component={NewMovieForm} />
+          <Route exact path='/books/new' component={NewBookForm} />
         </Switch>
       </div>
     );
