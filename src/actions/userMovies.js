@@ -7,7 +7,7 @@ export const setUserMovies = movies => {
 
 export const getUserMovies = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/movies", {
+    return fetch("http://localhost:3000/api/v1/dvds", {
       credentials: "include",
       method: "GET",
       headers: {
@@ -19,7 +19,7 @@ export const getUserMovies = () => {
       if (response.error) {
         alert(response.error)
       } else {
-        dispatch(setUserMovies())
+        dispatch(setUserMovies(response.data))
       }
     })
     .catch(console.log)

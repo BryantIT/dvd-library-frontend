@@ -31,9 +31,9 @@ export const login = credentials => {
         alert(response.error)
       } else {
         dispatch(setCurrentUser(response.data))
-        dispatch(clearLoginForm())
         dispatch(getUserMovies())
         dispatch (getUserBooks())
+        dispatch(clearLoginForm())
       }
     })
     .catch(console.log)
@@ -66,7 +66,7 @@ export const getCurrentUser = () => {
         } else {
           dispatch(setCurrentUser(response.data))
           dispatch(getUserMovies())
-          dispatch (getUserBooks())
+          dispatch(getUserBooks())
         }
       })
       .catch(console.log)

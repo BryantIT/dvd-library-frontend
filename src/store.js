@@ -3,13 +3,15 @@ import usersReducer from './reducers/users';
 import currentUser from './reducers/currentUser';
 import loginForm from './reducers/loginForm';
 import userMovies from './reducers/userMovies';
+import userBooks from './reducers/userBooks';
 import thunk from 'redux-thunk';
 
 const reducer = combineReducers({
   users: usersReducer,
   currentUser,
   loginForm,
-  userMovies
+  userMovies,
+  userBooks
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

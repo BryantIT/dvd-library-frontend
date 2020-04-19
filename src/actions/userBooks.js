@@ -19,7 +19,7 @@ export const getUserBooks = () => {
       if (response.error) {
         alert(response.error)
       } else {
-        dispatch(setUserBooks())
+        dispatch(setUserBooks(response.data))
       }
     })
     .catch(console.log)
