@@ -16,7 +16,7 @@ export const clearCurrentUser = () => {
   }
 }
 
-export const signup = credentials => {
+export const signup = (credentials, history) => {
   return dispatch => {
     const userInfo ={
       user: credentials
@@ -38,13 +38,14 @@ export const signup = credentials => {
         dispatch(getUserMovies())
         dispatch (getUserBooks())
         dispatch(clearSignupForm())
+        history.push('/')
       }
     })
     .catch(console.log)
   }
 }
 
-export const login = credentials => {
+export const login = (credentials, history) => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/login", {
       credentials: "include",
@@ -63,6 +64,7 @@ export const login = credentials => {
         dispatch(getUserMovies())
         dispatch (getUserBooks())
         dispatch(clearLoginForm())
+        history.push('/')
       }
     })
     .catch(console.log)
