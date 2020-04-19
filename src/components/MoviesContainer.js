@@ -1,17 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
-const MoviesContainer = () => {
-  return (
-    <div>
-      <h1>Welcome to your movies</h1>
-    </div>
-  )
+const MoviesContainer = props => {
+  const movieCards = props.movies.length > 0 ?
+    props.movies.map(t => (<p key={t.id}>{t.attributes.title}</p>)) :
+    null
+  return movieCards
 }
 
-const mapStateToProps = ({ currentUser }) => {
+const mapStateToProps = state => {
   return {
-    currentUser
+    movies: state.userMovies
   }
 }
 

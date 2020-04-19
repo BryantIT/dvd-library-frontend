@@ -5,11 +5,16 @@ import Logout from './Logout';
 
 const Nav = ({ currentUser }) => {
   return (
+    currentUser ?
     <div>
-      { currentUser ? <h1>Welcome {currentUser.attributes.name}</h1> : "" }
-      { currentUser ? <Logout /> : <Login /> }
-      { currentUser ? "Movies" : "" }
-      { currentUser ? "Books" : "" }
+      <h1>Welcome {currentUser.attributes.name}</h1>
+      <Logout />
+      <p>Movies</p>
+      <p>Books</p>
+    </div> :
+    <div>
+      <button>Login</button>
+      <button>Signup</button>
     </div>
   )
 }
