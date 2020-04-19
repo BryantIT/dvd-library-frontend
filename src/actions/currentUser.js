@@ -1,4 +1,5 @@
 import { clearLoginForm } from './loginForm';
+import { clearSignupForm } from './signupForm';
 import { getUserMovies } from './userMovies';
 import { getUserBooks } from './userBooks';
 
@@ -36,7 +37,7 @@ export const signup = credentials => {
         dispatch(setCurrentUser(response.data))
         dispatch(getUserMovies())
         dispatch (getUserBooks())
-        // dispatch(resetSignupForm())
+        dispatch(clearSignupForm())
       }
     })
     .catch(console.log)
