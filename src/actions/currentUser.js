@@ -1,7 +1,7 @@
 import { clearLoginForm } from './loginForm';
 import { clearSignupForm } from './signupForm';
-import { getUserMovies } from './userMovies';
-import { getUserBooks } from './userBooks';
+import { getUserMovies, clearUserMovies } from './userMovies';
+import { getUserBooks, clearUserBooks } from './userBooks';
 
 export const setCurrentUser = user => {
   return {
@@ -71,9 +71,11 @@ export const login = (credentials, history) => {
   }
 }
 
-export const logout = () => {
+export const logout = (history) => {
   return dispatch => {
     dispatch(clearCurrentUser())
+    dispatch(clearUserBooks())
+    dispatch(clearUserMovies())
     return fetch("http://localhost:3000/api/v1/logout", {
       credentials: "include",
       method: 'DELETE'

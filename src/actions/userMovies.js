@@ -5,6 +5,12 @@ export const setUserMovies = movies => {
   }
 }
 
+export const clearUserMovies = () => {
+  return {
+    type: "CLEAR_USER_MOVIES"
+  }
+}
+
 export const getUserMovies = () => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/dvds", {

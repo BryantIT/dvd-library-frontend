@@ -5,6 +5,12 @@ export const setUserBooks = books => {
   }
 }
 
+export const clearUserBooks = () => {
+  return {
+    type: "CLEAR_USER_BOOKS"
+  }
+}
+
 export const getUserBooks = () => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/books", {
