@@ -7,6 +7,6 @@ export const updateSignupForm = (formData)  => {
 
 export const clearSignupForm = ()  => {
   return {
-    type: "CLEAR_SIGNUP_FORM"
+    type: "RESET_SIGNUP_FORM"
   }
 }

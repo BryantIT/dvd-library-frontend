@@ -1,7 +1,7 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { updateSignupForm } from "../actions/signupForm.js"
-import { signup } from "../actions/currentUser.js"
+import React from 'react';
+import { connect } from 'react-redux';
+import { updateSignupForm } from "../actions/signupForm.js";
+import { signup } from "../actions/currentUser.js";
 
 
 const Signup = ({ signupFormData, updateSignupForm, signup }) => {
@@ -24,7 +24,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup }) => {
     <form onSubmit={handleSubmit}>
       <input placeholder="Your Name" value={signupFormData.name} name="name" type="text" onChange={handleUserProfileChange} />
       <input placeholder="youremail@email.com" value={signupFormData.email} name="email" type="email" onChange={handleUserProfileChange} />
-      <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleUserProfileChange} />
+      <input placeholder="password" value={signupFormData.password} name="password" type="password" onChange={handleUserProfileChange} />
       <input type="submit" value="Sign Up"/>
     </form>
   )
