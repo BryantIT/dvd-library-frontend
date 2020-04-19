@@ -1,4 +1,6 @@
 import { clearLoginForm } from './loginForm';
+import { getUserMovies } from './userMovies';
+import { getUserBooks } from './userBooks';
 
 export const setCurrentUser = user => {
   return {
@@ -30,6 +32,8 @@ export const login = credentials => {
       } else {
         dispatch(setCurrentUser(response.data))
         dispatch(clearLoginForm())
+        dispatch(getUserMovies())
+        dispatch (getUserBooks())
       }
     })
     .catch(console.log)
@@ -61,6 +65,8 @@ export const getCurrentUser = () => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
+          dispatch(getUserMovies())
+          dispatch (getUserBooks())
         }
       })
       .catch(console.log)

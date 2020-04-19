@@ -1,13 +1,13 @@
-export const setUserMovies = movies => {
+export const setUserBooks = books => {
   return {
-    type: "SET_USER_MOVIES",
-    movies
+    type: "SET_USER_BOOKS",
+    books
   }
 }
 
-export const getUserMovies = () => {
+export const getUserBooks = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/movies", {
+    return fetch("http://localhost:3000/api/v1/books", {
       credentials: "include",
       method: "GET",
       headers: {
@@ -19,7 +19,7 @@ export const getUserMovies = () => {
       if (response.error) {
         alert(response.error)
       } else {
-        dispatch(setUserMovies())
+        dispatch(setUserBooks())
       }
     })
     .catch(console.log)
