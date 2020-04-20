@@ -11,7 +11,7 @@ export default (state=initialState, action) => {
         ...state,
         [action.formData.name]: action.formData.value
       }
-    case "CLEAR_NEW_BOOK_FORM":
+    case "RESET_NEW_BOOK_FORM":
       return initialState
     default:
     return state

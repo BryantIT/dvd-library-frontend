@@ -1,3 +1,5 @@
+import { resetNewMovieForm } from './newMovieForm';
+
 export const setUserMovies = movies => {
   return {
     type: "SET_USER_MOVIES",
@@ -55,7 +57,7 @@ export const createUserMovie = (movieData, history) => {
         alert(resp.error)
       } else {
         dispatch(addUserMovie(resp.data))
-        dispatch(clearUserMovies())
+        dispatch(resetNewMovieForm())
         history.push(`/movies/${resp.data.id}`)
       }
     })

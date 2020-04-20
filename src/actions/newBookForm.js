@@ -5,3 +5,9 @@ export const updateNewBookForm = (name, value) => {
     formData
   }
 }
+
+export const resetNewBookForm = () => {
+  return {
+    type: "RESET_NEW_BOOK_FORM"
+  }
+}

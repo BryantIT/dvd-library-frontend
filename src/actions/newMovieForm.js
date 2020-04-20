@@ -5,3 +5,9 @@ export const updateNewMovieForm = (name, value) => {
     formData
   }
 }
+
+export const resetNewMovieForm = () => {
+  return {
+    type: "RESET_NEW_MOVIE_FORM"
+  }
+}

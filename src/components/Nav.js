@@ -10,6 +10,8 @@ const Nav = ({ currentUser }) => {
       <h1>Welcome {currentUser.attributes.name}</h1>
       <NavLink to="/books">My Books</NavLink>
       <NavLink to="/movies">My Movies</NavLink>
+      <NavLink to="/books/new">New Book</NavLink>
+      <NavLink to="/movies/new">New Movie</NavLink>
       <Logout />
     </div> : ""
 

@@ -1,3 +1,5 @@
+import { resetNewBookForm } from './newBookForm';
+
 export const setUserBooks = books => {
   return {
     type: "SET_USER_BOOKS",
@@ -55,7 +57,7 @@ export const createUserBook = (bookData, history) => {
         alert(resp.error)
       } else {
         dispatch(addUserBook(resp.data))
-        dispatch(clearUserBooks())
+        dispatch(resetNewBookForm())
         history.push(`/books/${resp.data.id}`)
       }
     })

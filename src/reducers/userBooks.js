@@ -1,11 +1,13 @@
-export default (state = [], action) => {
+const initialState = []
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case "SET_USER_BOOKS":
       return action.books
     case "ADD_USER_BOOK":
-      return state.books.concat(action.books)
+      return state.concat(action.book)
     case "CLEAR_USER_BOOKS":
-      return []
+      return initialState
     default:
       return state
   }
