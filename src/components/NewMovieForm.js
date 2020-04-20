@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateNewMovieForm } from '../actions/newMovieForm';
 
-const NewBookForm = ({ title, year, description, history }) => {
+const NewBookForm = ({ title, year, description, history, updateNewMovieForm }) => {
   const handleChange = event => {
     const { name, value } = event.target
     updateNewMovieForm(name, value)
