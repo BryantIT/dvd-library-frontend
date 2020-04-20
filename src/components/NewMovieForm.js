@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateNewMovieForm } from '../actions/newMovieForm';
+import { createUserMovie } from '../actions/userMovies';
 
-const NewBookForm = ({ title, year, description, history, updateNewMovieForm }) => {
+const NewBookForm = ({ userId, formData, history, updateNewMovieForm, createUserMovie }) => {
   const handleChange = event => {
     const { name, value } = event.target
     updateNewMovieForm(name, value)
@@ -10,8 +11,10 @@ const NewBookForm = ({ title, year, description, history, updateNewMovieForm }) 
 
   const handleSubmit = event => {
     event.preventDefault()
+    createUserMovie(formData, history)
   }
 
+  const {title, year, description} = formData
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -23,18 +26,18 @@ const NewBookForm = ({ title, year, description, history, updateNewMovieForm }) 
       <textarea
         placeholder="Description" name ="description" value={description}
         onChange={handleChange} />
+      <input type="hidden" name="userId" value={userId} />
       <input type="submit" value="Submit" />
     </form>
   )
 }
 
 const mapStateToProps = state => {
-  const { title, year, description } = state.newMovieForm
+  const userId = state.currentUser ? state.currentUser.id : ""
   return {
-    title,
-    year,
-    description
+    formData: state.newMovieForm,
+    userId
   }
 }
 
-export default connect(mapStateToProps,{ updateNewMovieForm })(NewBookForm);
+export default connect(mapStateToProps,{ updateNewMovieForm, createUserMovie })(NewBookForm);
