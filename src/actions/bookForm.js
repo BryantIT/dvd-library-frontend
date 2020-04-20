@@ -1,4 +1,4 @@
-export const updateNewBookForm = (name, value) => {
+export const updateBookForm = (name, value) => {
   const formData = { name, value }
   return {
     type: "UPDATE_NEW_BOOK_FORM",
@@ -6,7 +6,7 @@ export const updateNewBookForm = (name, value) => {
   }
 }
 
-export const resetNewBookForm = () => {
+export const resetBookForm = () => {
   return {
     type: "RESET_NEW_BOOK_FORM"
   }

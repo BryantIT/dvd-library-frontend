@@ -8,8 +8,8 @@ import Signup from './components/Signup';
 import MainContainer from './components/MainContainer';
 import BooksContainer from './components/BooksContainer';
 import MoviesContainer from './components/MoviesContainer';
-import NewMovieForm from './components/NewMovieForm';
-import NewBookForm from './components/NewBookForm';
+import MovieForm from './components/MovieForm';
+import BookForm from './components/BookForm';
 import MovieCard from './components/MovieCard';
 import BookCard from './components/BookCard';
 import Home from './components/Home';
@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   render() {
-    const { loggedIn, userBooks, userMovies } = this.props
+    const { loggedIn, userMovies, userBooks } = this.props
     return (
       <div>
         <Nav />
@@ -33,36 +33,36 @@ class App extends Component {
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/movies' component={MoviesContainer} />
           <Route exact path='/books' component={BooksContainer} />
-          <Route exact path='/movies/new' component={NewMovieForm} />
-          <Route exact path='/books/new' component={NewBookForm} />
+          <Route exact path='/movies/new' component={MovieForm} />
+          <Route exact path='/books/new' component={BookForm} />
           <Route exact path='/movies/:id' render={props => {
               const movie = userMovies.find(movie =>
                 movie.id === props.match.params.id)
 
-                return <MovieCard movie={movie}{...props}/>
+                return <MovieCard movie={movie} {...props}/>
               }
-            } />
+            }/>
           <Route exact path='/books/:id' render={props => {
               const book = userBooks.find(book =>
                 book.id === props.match.params.id)
 
-                return <BookCard book={book}{...props}/>
+                return <BookCard book={book} {...props}/>
               }
-            } />
+            }/>
           <Route exact path='/movies/:id/edit' render={props => {
                 const movie = userMovies.find(movie =>
                   movie.id === props.match.params.id)
 
-                  return <NewMovieForm movie={movie}{...props}/>
+                  return <MovieForm movie={movie} {...props}/>
                 }
-              } />
-            <Route exact path='/books/:id/edit' render={props => {
-                const book = userBooks.find(book =>
-                  book.id === props.match.params.id)
+              }/>
+          <Route exact path='/books/:id/edit' render={props => {
+              const book = userBooks.find(book =>
+                book.id === props.match.params.id)
 
-                  return <NewBookForm book={book}{...props}/>
-                }
-              } />
+                return <BookForm book={book} {...props}/>
+              }
+            }/>
         </Switch>
       </div>
     );

@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateNewBookForm } from '../actions/newBookForm';
+import { updateBookForm } from '../actions/bookForm';
 import { createUserBook } from '../actions/userBooks';
 
-const NewBookForm = ({ userId, formData, history, updateNewBookForm, createUserBook }) => {
+const BookForm = ({ userId, formData, history, updateBookForm, createUserBook }) => {
 
   const {title, author, description} = formData
 
   const handleChange = event => {
     const { name, value } = event.target
-    updateNewBookForm(name, value)
+    updateBookForm(name, value)
   }
 
   const handleSubmit = event => {
@@ -37,9 +37,9 @@ const NewBookForm = ({ userId, formData, history, updateNewBookForm, createUserB
 const mapStateToProps = state => {
   const userId = state.currentUser ? state.currentUser.id : ""
   return {
-    formData: state.newBookForm,
+    formData: state.bookForm,
     userId
   }
 }
 
-export default connect(mapStateToProps,{ updateNewBookForm, createUserBook })(NewBookForm);
+export default connect(mapStateToProps,{ updateBookForm, createUserBook })(BookForm);

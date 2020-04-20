@@ -1,4 +1,4 @@
-import { resetNewBookForm } from './newBookForm';
+import { resetBookForm } from './bookForm';
 
 export const setUserBooks = books => {
   return {
@@ -57,7 +57,7 @@ export const createUserBook = (bookData, history) => {
         alert(resp.error)
       } else {
         dispatch(addUserBook(resp.data))
-        dispatch(resetNewBookForm())
+        dispatch(resetBookForm())
         history.push(`/books/${resp.data.id}`)
       }
     })
