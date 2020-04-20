@@ -6,11 +6,12 @@ const initialState = {
 
 export default (state=initialState, action) => {
   switch (action.type) {
-    case "UPDATE_NEW_MOVIE_FORM":
-    return {
-      ...state,
-      [action.formData.name]: action.formData.value
-    }
+    case "UPDATE_NEW_BOOK_FORM":
+      const returnValue = {
+        ...state,
+        [action.formData.name]: action.formData.value
+      }
+      return returnValue
     case "RESET_NEW_MOVIE_FORM":
       return initialState
     case "SET_MOVIE_DATA_FOR_EDIT":

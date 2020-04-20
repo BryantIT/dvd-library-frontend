@@ -14,8 +14,8 @@ const Login = ({ loginForm, updateLoginForm, login, history }) => {
     updateLoginForm(updatedFormInfo)
   }
 
-  const handleSubmit = e => {
-    e.preventDefault()
+  const handleSubmit = event => {
+    event.preventDefault()
     login(loginForm, history)
   }
 

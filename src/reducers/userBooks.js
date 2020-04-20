@@ -7,7 +7,9 @@ export default (state = initialState, action) => {
     case "ADD_USER_BOOK":
       return state.concat(action.book)
     case "UPDATE_USER_BOOK":
-      return state
+      return state.map(book => book.id === action.book.id ? action.book : book)
+    case "DELETE_TRIP":
+    return state.filter(book => book.id === action.bookId ? false : true)
     case "CLEAR_USER_BOOKS":
       return initialState
     default:

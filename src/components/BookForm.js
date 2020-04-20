@@ -1,8 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { updateBookForm } from '../actions/bookForm';
+import { connect } from 'react-redux';
 
-const BookForm = ({ userId, formData, updateBookForm, createUserBook,
+const BookForm = ({ userId, formData, updateBookForm,
   book, handleSubmit, editMode }) => {
 
   const {title, author, description} = formData

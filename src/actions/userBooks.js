@@ -27,6 +27,13 @@ export const updateUserBookSuccess = userBook => {
   }
 }
 
+export const deleteUserBookSuccess = bookId => {
+  return {
+    type: "DELETE_USER_BOOK",
+    bookId
+  }
+}
+
 export const getUserBooks = () => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/books", {
@@ -88,8 +95,29 @@ export const updateUserBook = (bookData, history) => {
         alert(resp.error)
       } else {
         dispatch(updateUserBookSuccess(resp.data))
-        dispatch(resetBookForm())
         history.push(`/books/${resp.data.id}`)
+      }
+    })
+    .catch(console.log)
+  }
+}
+
+export const deleteUserBook = (bookId, history) => {
+  return dispatch => {
+    return fetch(`http://localhost:3000/api/v1/books/${bookId}`, {
+      credentials: "include",
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(r => r.json())
+    .then(resp => {
+      if (resp.error) {
+        alert(resp.error)
+      } else {
+        dispatch(deleteUserBookSuccess(bookId))
+        history.push('/books')
       }
     })
     .catch(console.log)

@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import BookForm from './BookForm';
+import { updateUserBook, deleteUserBook } from '../actions/userBooks';
+import { setBookDataForEdit, resetBookForm } from '../actions/bookForm';
 import { connect } from 'react-redux';
-import { updateUserBook } from '../actions/userBooks';
-import { setBookDataForEdit } from '../actions/bookForm';
 
 class EditBookFormWrapper extends Component {
 
   componentDidMount() {
     this.props.book && this.props.setBookDataForEdit(this.props.book)
+  }
+
+  componentDidUpdate(prevProps) {
+    this.props.book &&
+    !prevProps.book &&
+    this.props.setBookDataForEdit(this.props.book)
+  }
+
+  componentWillUnmount() {
+    this.props.resetBookForm()
   }
 
     handleSubmit = (formData) => {
@@ -17,10 +27,14 @@ class EditBookFormWrapper extends Component {
       bookId: book.id
     }, history)
   }
-render() {
-  const { history, handleSubmit } = this.props
-  return <BookForm editMode handleSubmit={this.handleSubmit} />
-}
+  render() {
+    const { history, deleteUserBook, book } = this.props
+    const bookId = book ? book.id : null
+    return  <>
+              <BookForm editMode handleSubmit={this.handleSubmit} />
+              <button onClick={() => deleteUserBook(bookId, history)}>Delete this Book</button>
+            </>
+  }
 }
 
-export default connect(null, { updateUserBook, setBookDataForEdit })(EditBookFormWrapper);
+export default connect(null, { updateUserBook, setBookDataForEdit, resetBookForm, deleteUserBook })(EditBookFormWrapper);

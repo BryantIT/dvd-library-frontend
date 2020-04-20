@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import MovieForm from './MovieForm';
 import { connect } from 'react-redux';
-import { updateUserMovie } from '../actions/userMovies';
-import { setMovieDataForEdit } from '../actions/movieForm';
+import { updateUserMovie, deleteUserMovie } from '../actions/userMovies';
+import { setMovieDataForEdit, resetMovieForm } from '../actions/movieForm';
 
 class EditMovieFormWrapper extends Component {
 
   componentDidMount() {
-    this.props.book && this.props.setMovieDataForEdit(this.props.movie)
+    this.props.movie && this.props.setMovieDataForEdit(this.props.movie)
+  }
+
+  componentDidUpdate(prevProps) {
+    this.props.movie &&
+    !prevProps.movie &&
+    this.props.setMovieDataForEdit(this.props.movie)
+  }
+
+  componentWillUnmount() {
+    this.props.resetMovieForm()
   }
 
     handleSubmit = (formData) => {
@@ -17,10 +27,14 @@ class EditMovieFormWrapper extends Component {
       movieId: movie.id
     }, history)
   }
-render() {
-  const { history, handleSubmit } = this.props
-  return <MovieForm editMode history={history} handleSubmit={handleSubmit} />
-}
+  render() {
+    const { history, deleteUserMovie, movie } = this.props
+    const movieId = movie ? movie.id : null
+    return  <>
+              <MovieForm editMode handleSubmit={this.handleSubmit} />
+              <button onClick={() => deleteUserMovie(movieId, history)}>Delete this Moviek</button>
+            </>
+  }
 }
 
-export default connect(null, { updateUserMovie, setMovieDataForEdit })(EditMovieFormWrapper);
+export default connect(null, { updateUserMovie, setMovieDataForEdit, resetMovieForm, deleteUserMovie })(EditMovieFormWrapper);

@@ -27,6 +27,13 @@ export const updateUserMovieSuccess = userMovie => {
   }
 }
 
+export const deleteUserMovieSuccess = movieId => {
+  return {
+    type: "DELETE_USER_MOVIE",
+    movieId
+  }
+}
+
 export const getUserMovies = () => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/movies", {
@@ -88,8 +95,29 @@ export const updateUserMovie = (movieData, history) => {
         alert(resp.error)
       } else {
         dispatch(updateUserMovieSuccess(resp.data))
-        dispatch(resetMovieForm())
         history.push(`/movies/${resp.data.id}`)
+      }
+    })
+    .catch(console.log)
+  }
+}
+
+export const deleteUserMovie = (movieId, history) => {
+  return dispatch => {
+    return fetch(`http://localhost:3000/api/v1/movies/${movieId}`, {
+      credentials: "include",
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(r => r.json())
+    .then(resp => {
+      if (resp.error) {
+        alert(resp.error)
+      } else {
+        dispatch(deleteUserMovieSuccess(movieId))
+        history.push('/movies')
       }
     })
     .catch(console.log)

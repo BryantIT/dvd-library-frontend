@@ -8,10 +8,11 @@ const Nav = ({ currentUser }) => {
     currentUser ?
     <div className="NavBar">
       <h1>Welcome {currentUser.attributes.name}</h1>
-      <NavLink to="/books">My Books</NavLink>
-      <NavLink to="/movies">My Movies</NavLink>
-      <NavLink to="/books/new">New Book</NavLink>
-      <NavLink to="/movies/new">New Movie</NavLink>
+      <NavLink to="/">| Home |</NavLink>
+      <NavLink to="/books">| My Books |</NavLink>
+      <NavLink to="/movies">| My Movies |</NavLink>
+      <NavLink to="/books/new">| New Book |</NavLink>
+      <NavLink to="/movies/new">| New Movie |</NavLink>
       <Logout />
     </div> : ""
 

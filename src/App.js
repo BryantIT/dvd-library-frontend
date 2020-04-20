@@ -3,23 +3,19 @@ import './App.css';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser';
 import Nav from './components/Nav';
+import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import MainContainer from './components/MainContainer';
 import BooksContainer from './components/BooksContainer';
 import MoviesContainer from './components/MoviesContainer';
-import MovieForm from './components/MovieForm';
-import BookForm from './components/BookForm';
 import MovieCard from './components/MovieCard';
 import BookCard from './components/BookCard';
-import Home from './components/Home';
 import EditBookFormWrapper from './components/EditBookFormWrapper';
 import EditMovieFormWrapper from './components/EditMovieFormWrapper';
 import NewBookFormWrapper from './components/NewBookFormWrapper';
 import NewMovieFormWrapper from './components/NewMovieFormWrapper';
 import { Route, Switch, withRouter  } from 'react-router-dom';
-import { setBookDataForEdit } from './actions/bookForm';
-import { setMovieDataForEdit } from './actions/movieForm';
 
 
 class App extends Component {
@@ -29,8 +25,7 @@ class App extends Component {
   }
 
   render() {
-    const { loggedIn, userMovies, userBooks, setBookDataForEdit,
-       setMovieDataForEdit } = this.props
+    const { loggedIn, userMovies, userBooks } = this.props
     return (
       <div>
         <Nav />
@@ -85,4 +80,4 @@ const mapStateToProps = state => {
 }
 
 
-export default withRouter(connect(mapStateToProps, {getCurrentUser, setBookDataForEdit, setMovieDataForEdit})(App));
+export default withRouter(connect(mapStateToProps, {getCurrentUser})(App));
