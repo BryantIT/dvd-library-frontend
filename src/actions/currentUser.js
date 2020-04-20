@@ -71,7 +71,7 @@ export const login = (credentials, history) => {
   }
 }
 
-export const logout = event => {
+export const logout = (history) => {
   return dispatch => {
     dispatch(clearCurrentUser())
     dispatch(clearUserBooks())
