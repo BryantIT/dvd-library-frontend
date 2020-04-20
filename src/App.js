@@ -49,6 +49,20 @@ class App extends Component {
                 return <BookCard book={book}{...props}/>
               }
             } />
+          <Route exact path='/movies/:id/edit' render={props => {
+                const movie = userMovies.find(movie =>
+                  movie.id === props.match.params.id)
+
+                  return <NewMovieForm movie={movie}{...props}/>
+                }
+              } />
+            <Route exact path='/books/:id/edit' render={props => {
+                const book = userBooks.find(book =>
+                  book.id === props.match.params.id)
+
+                  return <NewBookForm book={book}{...props}/>
+                }
+              } />
         </Switch>
       </div>
     );
