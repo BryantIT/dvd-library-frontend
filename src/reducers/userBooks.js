@@ -6,6 +6,8 @@ export default (state = initialState, action) => {
       return action.books
     case "ADD_USER_BOOK":
       return state.concat(action.book)
+    case "UPDATE_USER_BOOK":
+      return state
     case "CLEAR_USER_BOOKS":
       return initialState
     default:

@@ -20,6 +20,13 @@ export const addUserMovie = userMovie => {
   }
 }
 
+export const updateUserMovieSuccess = userMovie => {
+  return {
+    type: "UPDATE_USER_MOVIE",
+    userMovie
+  }
+}
+
 export const getUserMovies = () => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/movies", {
@@ -57,6 +64,30 @@ export const createUserMovie = (movieData, history) => {
         alert(resp.error)
       } else {
         dispatch(addUserMovie(resp.data))
+        dispatch(resetMovieForm())
+        history.push(`/movies/${resp.data.id}`)
+      }
+    })
+    .catch(console.log)
+  }
+}
+
+export const updateUserMovie = (movieData, history) => {
+  return dispatch => {
+    return fetch(`http://localhost:3000/api/v1/movies/${movieData.movieId}`, {
+      credentials: "include",
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(movieData)
+    })
+    .then(r => r.json())
+    .then(resp => {
+      if (resp.error) {
+        alert(resp.error)
+      } else {
+        dispatch(updateUserMovieSuccess(resp.data))
         dispatch(resetMovieForm())
         history.push(`/movies/${resp.data.id}`)
       }

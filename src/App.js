@@ -13,7 +13,13 @@ import BookForm from './components/BookForm';
 import MovieCard from './components/MovieCard';
 import BookCard from './components/BookCard';
 import Home from './components/Home';
+import EditBookFormWrapper from './components/EditBookFormWrapper';
+import EditMovieFormWrapper from './components/EditMovieFormWrapper';
+import NewBookFormWrapper from './components/NewBookFormWrapper';
+import NewMovieFormWrapper from './components/NewMovieFormWrapper';
 import { Route, Switch, withRouter  } from 'react-router-dom';
+import { setBookDataForEdit } from './actions/bookForm';
+import { setMovieDataForEdit } from './actions/movieForm';
 
 
 class App extends Component {
@@ -23,7 +29,8 @@ class App extends Component {
   }
 
   render() {
-    const { loggedIn, userMovies, userBooks } = this.props
+    const { loggedIn, userMovies, userBooks, setBookDataForEdit,
+       setMovieDataForEdit } = this.props
     return (
       <div>
         <Nav />
@@ -33,8 +40,8 @@ class App extends Component {
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/movies' component={MoviesContainer} />
           <Route exact path='/books' component={BooksContainer} />
-          <Route exact path='/movies/new' component={MovieForm} />
-          <Route exact path='/books/new' component={BookForm} />
+          <Route exact path='/movies/new' component={NewMovieFormWrapper} />
+          <Route exact path='/books/new' component={NewBookFormWrapper} />
           <Route exact path='/movies/:id' render={props => {
               const movie = userMovies.find(movie =>
                 movie.id === props.match.params.id)
@@ -53,14 +60,14 @@ class App extends Component {
                 const movie = userMovies.find(movie =>
                   movie.id === props.match.params.id)
 
-                  return <MovieForm movie={movie} {...props}/>
+                  return <EditMovieFormWrapper movie={movie} {...props}/>
                 }
               }/>
           <Route exact path='/books/:id/edit' render={props => {
               const book = userBooks.find(book =>
                 book.id === props.match.params.id)
 
-                return <BookForm book={book} {...props}/>
+                return <EditBookFormWrapper book={book} {...props}/>
               }
             }/>
         </Switch>
@@ -78,4 +85,4 @@ const mapStateToProps = state => {
 }
 
 
-export default withRouter(connect(mapStateToProps, {getCurrentUser})(App));
+export default withRouter(connect(mapStateToProps, {getCurrentUser, setBookDataForEdit, setMovieDataForEdit})(App));

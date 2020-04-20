@@ -13,6 +13,8 @@ export default (state=initialState, action) => {
       }
     case "RESET_NEW_BOOK_FORM":
       return initialState
+    case "SET_BOOK_DATA_FOR_EDIT":
+      return action.bookFormData
     default:
     return state
   }

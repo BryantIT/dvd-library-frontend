@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateMovieForm } from '../actions/movieForm';
-import { createUserMovie } from '../actions/userMovies';
 
-const MovieForm = ({ userId, formData, history, updateMovieForm, createUserMovie }) => {
+const MovieForm = ({ userId, formData, updateMovieForm, createUserMovie,
+  movie, handleSubmit, editMode }) => {
 
   const {title, year, description} = formData
 
@@ -12,13 +12,11 @@ const MovieForm = ({ userId, formData, history, updateMovieForm, createUserMovie
     updateMovieForm(name, value)
   }
 
-  const handleSubmit = event => {
-    event.preventDefault()
-    createUserMovie(formData, history)
-  }
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={event => {
+        event.preventDefault()
+        handleSubmit(formData)
+      }}>
       <input
         placeholder="Title" name="title" type="text" value={title}
         onChange={handleChange} />
@@ -29,7 +27,7 @@ const MovieForm = ({ userId, formData, history, updateMovieForm, createUserMovie
         placeholder="Description" name ="description" value={description}
         onChange={handleChange} />
       <input type="hidden" name="userId" value={userId} />
-      <input type="submit" value="Submit" />
+      <input type="submit" value={editMode ? "Update Movie" : "Create Movie"} />
     </form>
   )
 }
@@ -42,4 +40,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps,{ updateMovieForm, createUserMovie })(MovieForm);
+export default connect(mapStateToProps,{ updateMovieForm })(MovieForm);

@@ -1,5 +1,5 @@
-import { clearLoginForm } from './loginForm';
-import { clearSignupForm } from './signupForm';
+import { resetLoginForm } from './loginForm';
+import { resetSignupForm } from './signupForm';
 import { getUserMovies, clearUserMovies } from './userMovies';
 import { getUserBooks, clearUserBooks } from './userBooks';
 
@@ -37,7 +37,7 @@ export const signup = (credentials, history) => {
         dispatch(setCurrentUser(response.data))
         dispatch(getUserMovies())
         dispatch (getUserBooks())
-        dispatch(clearSignupForm())
+        dispatch(resetSignupForm())
         history.push('/')
       }
     })
@@ -63,7 +63,7 @@ export const login = (credentials, history) => {
         dispatch(setCurrentUser(response.data))
         dispatch(getUserMovies())
         dispatch (getUserBooks())
-        dispatch(clearLoginForm())
+        dispatch(resetLoginForm())
         history.push('/')
       }
     })
@@ -71,7 +71,7 @@ export const login = (credentials, history) => {
   }
 }
 
-export const logout = (history) => {
+export const logout = event => {
   return dispatch => {
     dispatch(clearCurrentUser())
     dispatch(clearUserBooks())

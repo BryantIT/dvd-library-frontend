@@ -13,6 +13,8 @@ export default (state=initialState, action) => {
     }
     case "RESET_NEW_MOVIE_FORM":
       return initialState
+    case "SET_MOVIE_DATA_FOR_EDIT":
+      return action.movieFormData
     default:
     return state
   }

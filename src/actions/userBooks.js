@@ -20,6 +20,13 @@ export const addUserBook = userBook => {
   }
 }
 
+export const updateUserBookSuccess = userBook => {
+  return {
+    type: "UPDATE_USER_BOOK",
+    userBook
+  }
+}
+
 export const getUserBooks = () => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/books", {
@@ -57,6 +64,30 @@ export const createUserBook = (bookData, history) => {
         alert(resp.error)
       } else {
         dispatch(addUserBook(resp.data))
+        dispatch(resetBookForm())
+        history.push(`/books/${resp.data.id}`)
+      }
+    })
+    .catch(console.log)
+  }
+}
+
+export const updateUserBook = (bookData, history) => {
+  return dispatch => {
+    return fetch(`http://localhost:3000/api/v1/books/${bookData.bookId}`, {
+      credentials: "include",
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(bookData)
+    })
+    .then(r => r.json())
+    .then(resp => {
+      if (resp.error) {
+        alert(resp.error)
+      } else {
+        dispatch(updateUserBookSuccess(resp.data))
         dispatch(resetBookForm())
         history.push(`/books/${resp.data.id}`)
       }

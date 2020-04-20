@@ -11,3 +11,15 @@ export const resetBookForm = () => {
     type: "RESET_NEW_BOOK_FORM"
   }
 }
+
+export const setBookDataForEdit = book => {
+  const bookFormData = {
+    title: book.attributes.title,
+    author: book.attributes.author,
+    description: book.attributes.description
+  }
+  return {
+    type: "SET_BOOK_DATA_FOR_EDIT",
+    bookFormData
+  }
+}

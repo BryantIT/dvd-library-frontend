@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateBookForm } from '../actions/bookForm';
-import { createUserBook } from '../actions/userBooks';
 
-const BookForm = ({ userId, formData, history, updateBookForm, createUserBook }) => {
+const BookForm = ({ userId, formData, updateBookForm, createUserBook,
+  book, handleSubmit, editMode }) => {
 
   const {title, author, description} = formData
 
@@ -12,13 +12,11 @@ const BookForm = ({ userId, formData, history, updateBookForm, createUserBook })
     updateBookForm(name, value)
   }
 
-  const handleSubmit = event => {
-    event.preventDefault()
-    createUserBook(formData, history)
-  }
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={event => {
+        event.preventDefault()
+        handleSubmit(formData)
+      }}>
       <input
         placeholder="Title" name="title" type="text" value={title}
         onChange={handleChange} />
@@ -29,7 +27,7 @@ const BookForm = ({ userId, formData, history, updateBookForm, createUserBook })
         placeholder="Description" name="description" value={description}
         onChange={handleChange} />
       <input type="hidden" name="userId" value={userId} />
-      <input type="submit" value="Submit" />
+      <input type="submit" value={editMode ? "Update Book" : "Create Book"} />
     </form>
   )
 }
@@ -42,4 +40,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps,{ updateBookForm, createUserBook })(BookForm);
+export default connect(mapStateToProps,{ updateBookForm })(BookForm);
