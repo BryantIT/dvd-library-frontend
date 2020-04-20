@@ -7,8 +7,8 @@ const MovieCard = ({ movie }) => {
         <h3>{movie.attributes.title}</h3>
         <p>{movie.attributes.year}</p>
         <p>{movie.attributes.description}</p>
-      </div> :
-      <p>This the the Movie card with no movie!</p>
+      </div> : null
+
   )
 }
 

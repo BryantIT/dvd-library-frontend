@@ -10,6 +10,8 @@ import BooksContainer from './components/BooksContainer';
 import MoviesContainer from './components/MoviesContainer';
 import NewMovieForm from './components/NewMovieForm';
 import NewBookForm from './components/NewBookForm';
+import MovieCard from './components/MovieCard';
+import BookCard from './components/BookCard';
 import Home from './components/Home';
 import { Route, Switch, withRouter  } from 'react-router-dom';
 
@@ -21,7 +23,7 @@ class App extends Component {
   }
 
   render() {
-    const { loggedIn } = this.props
+    const { loggedIn, userBooks, userMovies } = this.props
     return (
       <div>
         <Nav />
@@ -33,6 +35,20 @@ class App extends Component {
           <Route exact path='/books' component={BooksContainer} />
           <Route exact path='/movies/new' component={NewMovieForm} />
           <Route exact path='/books/new' component={NewBookForm} />
+          <Route exact path='/movies/:id' render={props => {
+              const movie = userMovies.find(movie =>
+                movie.id === props.match.params.id)
+
+                return <MovieCard movie={movie}{...props}/>
+              }
+            } />
+          <Route exact path='/books/:id' render={props => {
+              const book = userBooks.find(book =>
+                book.id === props.match.params.id)
+
+                return <BookCard book={book}{...props}/>
+              }
+            } />
         </Switch>
       </div>
     );
@@ -41,7 +57,9 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return ({
-    loggedIn: !!state.currentUser
+    loggedIn: !!state.currentUser,
+    userMovies: state.userMovies,
+    userBooks: state.userBooks
   })
 }
 
