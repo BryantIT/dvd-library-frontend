@@ -44,8 +44,8 @@ MENU STYLES
 /* skin */
 
 .menu{
-  background-color: #21D4FD;
-  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+  background-color: #e90418;
+  background-image: linear-gradient(19deg, #e90418 0%, #e90418 100%);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
 }
 

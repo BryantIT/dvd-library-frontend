@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './style.scss';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser';
 import Nav from './components/Nav';

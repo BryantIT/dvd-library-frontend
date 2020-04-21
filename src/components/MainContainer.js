@@ -5,7 +5,7 @@ const MainContainer = ({ currentUser }) => {
   return (
     currentUser ?
     <div className="w3-container w3-padding-32 w3-center">
-      <h1>Welcome to your library {currentUser.attributes.name}</h1>
+      <h1 className="txt">Welcome to your library {currentUser.attributes.name}</h1>
       <div className="w3-padding-32">
         <h2>You currently have</h2>
         <h2>{currentUser.relationships.movies.data.length} Movies
