@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom';
 
 const MoviesContainer = props => {
   const movieCards = props.movies.length > 0 ?
-    props.movies.map(t => (<p key={t.id}><Link to={`/movies/${t.id}`}>{t.attributes.title}</Link></p>)) :
+    props.movies.map(t => (<div key={t.id} className="w3-quarter"><Link to={`/movies/${t.id}`}>{t.attributes.title}</Link></div>)) :
     null
-  return movieCards
+  return (
+    <div className="w3-row-padding w3-padding-16 w3-center">
+      {movieCards}
+    </div>
+  )
 }
 
 const mapStateToProps = state => {

@@ -28,7 +28,7 @@ const Nav = ({ currentUser }) => {
           <Logout />
         </ul>
       </nav>
-      <h1>Welcome {currentUser.attributes.name}</h1>
+      
     </div> : ""
 
   )
