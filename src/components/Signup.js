@@ -21,12 +21,26 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input placeholder="Your Name" value={signupFormData.name} name="name" type="text" onChange={handleUserProfileChange} />
-      <input placeholder="youremail@email.com" value={signupFormData.email} name="email" type="email" onChange={handleUserProfileChange} />
-      <input placeholder="password" value={signupFormData.password} name="password" type="password" onChange={handleUserProfileChange} />
-      <input type="submit" value="Sign Up"/>
-    </form>
+    <div className="w3-container w3-padding-32 w3-center">
+      <h1 className="txt w3-jumbo">Welcome</h1>
+      <div className='bold-line'></div>
+      <div className='container'>
+        <div className='window'>
+          <div clasNames='overlay'></div>
+          <div className='content'>
+            <div className='welcome'>Please Sign Up</div>
+            <div className='input-fields'>
+              <form onSubmit={handleSubmit}>
+                <input className='input-line full-width w3-xlarge' placeholder="Your Name" value={signupFormData.name} name="name" type="text" onChange={handleUserProfileChange} />
+                <input className='input-line full-width w3-xlarge' placeholder="youremail@email.com" value={signupFormData.email} name="email" type="email" onChange={handleUserProfileChange} />
+                <input className='input-line full-width w3-xlarge' placeholder="password" value={signupFormData.password} name="password" type="password" onChange={handleUserProfileChange} />
+                <input className='input-button' type="submit" value="Sign Up"/>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 

@@ -7,7 +7,7 @@ const MoviesContainer = props => {
     props.movies.map(t => (<div key={t.id} className="w3-quarter"><Link to={`/movies/${t.id}`}>{t.attributes.title}</Link></div>)) :
     null
   return (
-    <div className="w3-row-padding w3-padding-16 w3-center">
+    <div className=" w3-row-padding w3-container w3-padding-32 w3-center">
       {movieCards}
     </div>
   )
