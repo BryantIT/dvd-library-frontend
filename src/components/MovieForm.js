@@ -13,22 +13,35 @@ const MovieForm = ({ userId, formData, updateMovieForm,
   }
 
   return (
-    <form onSubmit={event => {
-        event.preventDefault()
-        handleSubmit(formData)
-      }}>
-      <input
-        placeholder="Title" name="title" type="text" value={title}
-        onChange={handleChange} />
-      <input
-        placeholder="Release Year" name="year" type="text" value={year}
-        onChange={handleChange} />
-      <textarea
-        placeholder="Description" name ="description" value={description}
-        onChange={handleChange} />
-      <input type="hidden" name="userId" value={userId} />
-      <input type="submit" value={editMode ? "Update Movie" : "Create Movie"} />
-    </form>
+    <div className="w3-container w3-padding-32 w3-center">
+      <div className='bold-line'></div>
+      <div className='container'>
+        <div className='window'>
+          <div clasNames='overlay'></div>
+          <div className='content'>
+            <div className='welcome'>Add A New Movie</div>
+            <div className='input-fields'>
+              <form onSubmit={event => {
+                  event.preventDefault()
+                  handleSubmit(formData)
+                }}>
+                <input className='input-line full-width w3-xlarge'
+                  placeholder="Title" name="title" type="text" value={title}
+                  onChange={handleChange} />
+                <input className='input-line full-width w3-xlarge'
+                  placeholder="Release Year" name="year" type="text" value={year}
+                  onChange={handleChange} />
+                <textarea className='input-line full-width w3-xlarge'
+                  placeholder="Description" name ="description" value={description}
+                  onChange={handleChange} />
+                <input type="hidden" name="userId" value={userId} />
+                <input className='input-button' type="submit" value={editMode ? "Update Movie" : "Create Movie"} />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 

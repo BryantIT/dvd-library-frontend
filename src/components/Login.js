@@ -41,7 +41,6 @@ const Login = ({ loginForm, updateLoginForm, login, history }) => {
           </div>
         </div>
       </div>
-
     </div>
   )
 }
