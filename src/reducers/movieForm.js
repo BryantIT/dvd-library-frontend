@@ -6,7 +6,7 @@ const initialState = {
 
 export default (state=initialState, action) => {
   switch (action.type) {
-    case "UPDATE_NEW_BOOK_FORM":
+    case "UPDATE_NEW_MOVIE_FORM":
       const returnValue = {
         ...state,
         [action.formData.name]: action.formData.value

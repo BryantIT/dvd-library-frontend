@@ -4,9 +4,16 @@ import { Link } from 'react-router-dom';
 
 const BooksContainer = props => {
   const bookCards = props.books.length > 0 ?
-    props.books.map(t => (<p key={t.id}><Link to={`/books/${t.id}`}>{t.attributes.title}</Link></p>)) :
+    props.books.map(t => (<div key={t.id} className="w3-quarter"><Link to={`/books/${t.id}`}>{t.attributes.title}</Link></div>)) :
     null
-  return bookCards
+  return (
+    <div className="w3-row-padding w3-padding-16 w3-center">
+
+        {bookCards}
+
+    </div>
+  )
+
 }
 
 const mapStateToProps = state => {

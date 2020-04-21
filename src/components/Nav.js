@@ -6,14 +6,29 @@ import { NavLink } from 'react-router-dom';
 const Nav = ({ currentUser }) => {
   return (
     currentUser ?
-    <div className="NavBar">
+    <div className="page">
+      <nav className="menu">
+        <ul className="menu__list">
+          <li className="menu__group">
+            <NavLink className="menu__link" to="/">Home</NavLink>
+          </li>
+          <li className="menu__group">
+            <NavLink className="menu__link" to="/books">My Books</NavLink>
+          </li>
+          <li className="menu__group">
+            <NavLink className="menu__link" to="/movies">My Movies</NavLink>
+          </li>
+          <li className="menu__group">
+            <NavLink className="menu__link" to="/books/new">New Book</NavLink>
+          </li>
+          <li className="menu__group">
+            <NavLink className="menu__link" to="/movies/new">New Movie</NavLink>
+          </li>
+
+          <Logout />
+        </ul>
+      </nav>
       <h1>Welcome {currentUser.attributes.name}</h1>
-      <NavLink to="/">| Home |</NavLink>
-      <NavLink to="/books">| My Books |</NavLink>
-      <NavLink to="/movies">| My Movies |</NavLink>
-      <NavLink to="/books/new">| New Book |</NavLink>
-      <NavLink to="/movies/new">| New Movie |</NavLink>
-      <Logout />
     </div> : ""
 
   )
