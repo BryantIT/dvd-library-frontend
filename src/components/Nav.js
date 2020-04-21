@@ -28,8 +28,8 @@ const Nav = ({ currentUser }) => {
           <Logout />
         </ul>
       </nav>
-      
-    </div> : ""
+
+    </div> : <h2>Personal Media Library</h2>
 
   )
 }

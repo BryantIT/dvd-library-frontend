@@ -31,9 +31,11 @@ const Login = ({ loginForm, updateLoginForm, login, history }) => {
             <div className='welcome'>Please Log In</div>
             <div className='input-fields'>
               <form onSubmit={handleSubmit}>
-                <input className='input-line full-width w3-xlarge' placeholder="email" name="email" type="email" value={loginForm.email} onChange={handleInputChange} />
-                <input className='input-line full-width w3-xlarge' placeholder="password" name="password" type="password" value={loginForm.password} onChange={handleInputChange} />
-                <input className='input-button' type="submit" value="login" />
+                <input className='input-line full-width w3-xlarge' placeholder="email"
+                  name="email" type="email" value={loginForm.email} onChange={handleInputChange} />
+                <input className='input-line full-width w3-xlarge' placeholder="password"
+                  name="password" type="password" value={loginForm.password} onChange={handleInputChange} />
+                <input className='input-button' type="submit" value="LOGIN" />
               </form>
             </div>
           </div>
