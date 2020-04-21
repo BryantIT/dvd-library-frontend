@@ -14,17 +14,33 @@ const Login = ({ loginForm, updateLoginForm, login, history }) => {
     updateLoginForm(updatedFormInfo)
   }
 
+
   const handleSubmit = event => {
     event.preventDefault()
     login(loginForm, history)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input placeholder="you@email.com" name="email" type="email" value={loginForm.email} onChange={handleInputChange} />
-      <input placeholder="password" name="password" type="password" value={loginForm.password} onChange={handleInputChange} />
-      <input type="submit" value="login" />
-    </form>
+    <div className="w3-container w3-padding-32 w3-center">
+      <h1 className="txt w3-jumbo">Welcome Back</h1>
+      <div className='bold-line'></div>
+      <div className='container'>
+        <div className='window'>
+          <div clasNames='overlay'></div>
+          <div className='content'>
+            <div className='welcome'>Please Log In</div>
+            <div className='input-fields'>
+              <form onSubmit={handleSubmit}>
+                <input className='input-line full-width w3-xlarge' placeholder="email" name="email" type="email" value={loginForm.email} onChange={handleInputChange} />
+                <input className='input-line full-width w3-xlarge' placeholder="password" name="password" type="password" value={loginForm.password} onChange={handleInputChange} />
+                <input className='input-button' type="submit" value="login" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   )
 }
 
