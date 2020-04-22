@@ -24,11 +24,14 @@ This is an ongoing personal project originally built as a final project submissi
 Home Screen:
 ![Home Screen](https://github.com/BryantIT/dvd-library-frontend/blob/master/public/images/finalproject1.png "Fully Styled Home Screen")
 
-[ PRETEND OTHER SCREEN SHOT IS HERE ]
+Movie Show Page:
+![Movie Show Page](https://github.com/BryantIT/dvd-library-frontend/blob/master/public/images/finalproject2.png "Fully Styled Movie Show Page")
 
 ## Installation and Setup Instructions
 
-#### Example:  
+Clone the Rails backend to this project here [Project Backend](https://github.com/BryantIT/dvd-library-backend)
+
+Run 'Rails Server' on backend
 
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
@@ -36,33 +39,20 @@ Installation:
 
 `npm install`  
 
-To Run Test Suite:  
-
-`npm test`  
-
 To Start Server:
 
 `npm start`  
 
 To Visit App:
 
-`localhost:3000/ideas`  
+`localhost:3001`
 
 ## Reflection
 
-  - What was the context for this project? (ie: was this a side project? was this for Turing? was this for an experiment?)
-  - What did you set out to build?
-  - Why was this project challenging and therefore a really good learning experience?
-  - What were some unexpected obstacles?
-  - What tools did you use to implement this project?
-      - This might seem obvious because you are IN this codebase, but to all other humans now is the time to talk about why you chose webpack instead of create react app, or D3, or vanilla JS instead of a framework etc. Brag about your choices and justify them here.  
+This was the final project for my time at Flatiron School. Project goals included using everything I had learned so far, use create-react-app and a rails backend.  
 
-#### Example:  
+When I first started at Flatiron the very first thing I wanted to build was some way to organize my own personal dvd collection so that I could just look up my library on my phone from anywhere I am.  I have this problem that I have so many dvds that when I see a movie on sale somewhere I sometimes forget if I already own that movie. In the beginning of my time at Flatiron I didn't have the skill and knowledge to create the app I wanted. When I finally got to the last module and learned about React and Redux I realized I could finally build the app I wanted.  
 
-This was a 3 week long project built during my third module at Turing School of Software and Design. Project goals included using technologies learned up until this point and familiarizing myself with documentation for new features.  
+One of the main challenges I ran into was Redux as a whole.  The problem I had wasn't really technical.  It was wrapping my mind around why this was even needed.  The problem was that I had practice using Redux on very small projects and it was very much overkill.  It wasn't until I was halfway through a much larger project (this one), that I started to see the benefits of Redux
 
-Originally I wanted to build an application that allowed users to pull data from the Twitter API based on what they were interested in, such as 'most tagged users'. I started this process by using the `create-react-app` boilerplate, then adding `react-router-4.0` and `redux`.  
-
-One of the main challenges I ran into was Authentication. This lead me to spend a few days on a research spike into OAuth, Auth0, and two-factor authentication using Firebase or other third parties. Due to project time constraints, I had to table authentication and focus more on data visualization from parts of the API that weren't restricted to authenticated users.
-
-At the end of the day, the technologies implemented in this project are React, React-Router 4.0, Redux, LoDash, D3, and a significant amount of VanillaJS, JSX, and CSS. I chose to use the `create-react-app` boilerplate to minimize initial setup and invest more time in diving into weird technological rabbit holes. In the next iteration I plan on handrolling a `webpack.config.js` file to more fully understand the build process.
+At the end of the day, the technologies implemented in this project are React, React-Router, Redux, React-Sass and a significant amount of VanillaJS, JSX, and CSS. I chose to use the `create-react-app` boilerplate to minimize initial setup.
