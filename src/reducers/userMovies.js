@@ -6,7 +6,7 @@ export default (state = initialState, action) => {
       return action.movies
     case "ADD_USER_MOVIE":
       return state.concat(action.userMovie)
-    case "UPDATE_USER_MOVIES":
+    case "UPDATE_USER_MOVIE":
       return state.map(movie => movie.id === action.userMovie.id ? action.userMovie : movie)
     case "DELETE_USER_MOVIE":
     return state.filter(movie => movie.id === action.movieId ? false : true)

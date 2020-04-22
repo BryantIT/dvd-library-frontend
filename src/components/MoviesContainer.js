@@ -15,6 +15,7 @@ const MoviesContainer = props => {
                 <p>{t.attributes.year}</p>
                 <div className="foot">
                   <i className="line"></i>
+                  <p>{t.attributes.description}</p>
                 </div>
               </div>
             </div>

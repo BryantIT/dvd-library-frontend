@@ -15,6 +15,7 @@ const BooksContainer = props => {
                 <p><small>by: </small>{t.attributes.author}</p>
                 <div className="foot">
                   <i className="line"></i>
+                  <p>{t.attributes.description}</p>
                 </div>
               </div>
             </div>

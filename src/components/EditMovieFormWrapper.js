@@ -33,7 +33,7 @@ class EditMovieFormWrapper extends Component {
     return (
       <div className="w3-container w3-center">
         <MovieForm editMode handleSubmit={this.handleSubmit} />
-        <button className="input-button" onClick={() => deleteUserMovie(movieId, history)}>Delete this Moviek</button>
+        <button className="input-button" onClick={() => deleteUserMovie(movieId, history)}>Delete this Movie</button>
       </div>
     )
   }
