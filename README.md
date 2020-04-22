@@ -14,6 +14,8 @@ This is an ongoing personal project originally built as a final project submissi
 * Search Function
 * User submitted images
 * Tags (such as location; home, loaned to friend, digital or hard copy)
+* Deploy to Heroku
+* Turn into mobile app or do more testing to on function as a progressive web app.
 * Stretch goal: I would like to eventually set this up so that a user just has to enter a title and that will pull an   image and further information from an external API while still saving everything to the database.
 * Stretch Stretch goal: A user just has to scan the barcode on the back of a dvd or book to get all information saved to the database
 
