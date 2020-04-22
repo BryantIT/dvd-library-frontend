@@ -29,7 +29,12 @@ const Nav = ({ currentUser }) => {
         </ul>
       </nav>
 
-    </div> : <h2>Personal Media Library</h2>
+    </div> :
+    <div className="page">
+      <div className="menu">
+        <h2 className="menu__link w3-center">Personal Media Library</h2>
+      </div>
+    </div>
 
   )
 }

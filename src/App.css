@@ -45,9 +45,9 @@ MENU STYLES
 
 .menu__link{
   padding: 2rem 1.5rem;
-
   font-weight: 700;
   color: #fff;
+  text-shadow: 3px 3px 0 #444;
   text-decoration: none;
   text-transform: uppercase;
 }

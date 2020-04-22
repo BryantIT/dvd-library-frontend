@@ -20,7 +20,7 @@ const MovieCard = ({ movie }) => {
               </div>
             </div>
           </div>
-          <Link to={`/movies/${movie.id}/edit`}>Edit Movie</Link>
+          <Link className="input-button" to={`/movies/${movie.id}/edit`}>Edit Movie</Link>
       </div> : null
   )
 }

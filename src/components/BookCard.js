@@ -20,7 +20,7 @@ const BookCard = ({ book }) => {
             </div>
           </div>
         </div>
-        <Link to={`/books/${book.id}/edit`}>Edit Book</Link>
+        <Link className="input-button" to={`/books/${book.id}/edit`}>Edit Book</Link>
       </div> : null
   )
 }

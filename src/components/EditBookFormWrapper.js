@@ -30,10 +30,12 @@ class EditBookFormWrapper extends Component {
   render() {
     const { history, deleteUserBook, book } = this.props
     const bookId = book ? book.id : null
-    return  <>
-              <BookForm editMode handleSubmit={this.handleSubmit} />
-              <button onClick={() => deleteUserBook(bookId, history)}>Delete this Book</button>
-            </>
+    return  (
+      <div className="w3-container w3-center">
+        <BookForm editMode handleSubmit={this.handleSubmit} />
+        <button className="input-button" onClick={() => deleteUserBook(bookId, history)}>Delete this Book</button>
+      </div>
+    )
   }
 }
 

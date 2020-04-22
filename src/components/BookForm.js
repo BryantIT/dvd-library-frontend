@@ -21,7 +21,7 @@ const BookForm = ({ userId, formData, updateBookForm,
         <div className='window'>
           <div className='overlay'></div>
           <div className='content'>
-            <div className='welcome'>Add A New Book</div>
+            <div className='welcome'>{editMode ? "Update Book" : "Add a New Book"}</div>
             <div className='input-fields'>
               <form onSubmit={event => {
                   event.preventDefault()

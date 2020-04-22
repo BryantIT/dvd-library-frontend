@@ -30,10 +30,12 @@ class EditMovieFormWrapper extends Component {
   render() {
     const { history, deleteUserMovie, movie } = this.props
     const movieId = movie ? movie.id : null
-    return  <>
-              <MovieForm editMode handleSubmit={this.handleSubmit} />
-              <button onClick={() => deleteUserMovie(movieId, history)}>Delete this Moviek</button>
-            </>
+    return (
+      <div className="w3-container w3-center">
+        <MovieForm editMode handleSubmit={this.handleSubmit} />
+        <button className="input-button" onClick={() => deleteUserMovie(movieId, history)}>Delete this Moviek</button>
+      </div>
+    )
   }
 }
 
