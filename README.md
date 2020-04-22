@@ -22,7 +22,7 @@ This is an ongoing personal project originally built as a final project submissi
 #### Example:   
 
 Home Screen:
-![Home Screen](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Fully Styled Home Screen")
+![Home Screen](https://github.com/BryantIT/dvd-library-frontend/blob/master/public/images/finalproject1.png "Fully Styled Home Screen")
 
 [ PRETEND OTHER SCREEN SHOT IS HERE ]
 
