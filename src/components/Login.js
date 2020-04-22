@@ -26,7 +26,7 @@ const Login = ({ loginForm, updateLoginForm, login, history }) => {
       <div className='bold-line'></div>
       <div className='container'>
         <div className='window'>
-          <div clasNames='overlay'></div>
+          <div className='overlay'></div>
           <div className='content'>
             <div className='welcome'>Please Log In</div>
             <div className='input-fields'>

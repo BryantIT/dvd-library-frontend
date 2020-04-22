@@ -26,7 +26,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
       <div className='bold-line'></div>
       <div className='container'>
         <div className='window'>
-          <div clasNames='overlay'></div>
+          <div className='overlay'></div>
           <div className='content'>
             <div className='welcome'>Please Sign Up</div>
             <div className='input-fields'>
