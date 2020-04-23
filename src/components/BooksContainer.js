@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const BooksContainer = props => {
   const bookCards = props.books.length > 0 ?
-    props.books.map(t => (
+    props.books.sort((a, b) => a.attributes.title.localeCompare(b.attributes.title)).map(t => (
       <div key={t.id} className="w3-quarter w3-margin-bottom">
         <div className="box gallery">
           <div className="card">

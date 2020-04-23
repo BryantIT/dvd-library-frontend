@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const MoviesContainer = props => {
   const movieCards = props.movies.length > 0 ?
-    props.movies.map(t => (
+    props.movies.sort((a, b) => a.attributes.title.localeCompare(b.attributes.title)).map(t => (
       <div key={t.id} className="w3-quarter w3-margin-bottom">
         <div className="box gallery">
           <div className="card">
