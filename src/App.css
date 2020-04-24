@@ -159,6 +159,25 @@ DEMO
   text-shadow: 3px 3px 0 #444
 }
 
+.search-button {
+  color: #fff!important;
+  font-size: 20px;
+  background-color: #f44336!important;
+  border: none;
+  border-radius: 12px;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+
+}
+
 .main {
   max-width: 1200px;
   margin-top: 100px;
