@@ -8,8 +8,7 @@ import Home from './components/Home';
 import Login from './components/users/Login';
 import Signup from './components/users/Signup';
 import MainContainer from './components/MainContainer';
-// import BooksContainer from './components/books/BooksContainer';
-import BookSearch from './components/books/BookSearch';
+import BooksContainer from './components/books/BooksContainer';
 import MoviesContainer from './components/movies/MoviesContainer';
 import MovieCard from './components/movies/MovieCard';
 import BookCard from './components/books/BookCard';
@@ -36,7 +35,7 @@ class App extends Component {
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/movies' component={MoviesContainer} />
-          <Route exact path='/books' component={BookSearch} />
+          <Route exact path='/books' component={BooksContainer} />
           <Route exact path='/movies/new' component={NewMovieFormWrapper} />
           <Route exact path='/books/new' component={NewBookFormWrapper} />
           <Route exact path='/movies/:id' render={props => {
