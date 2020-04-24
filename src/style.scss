@@ -62,13 +62,17 @@
 
 /* Base styling */
 
+.search-container {
+  padding-bottom: 32px;
+}
+
 .search-input {
   width: 430px;
   padding: 12px 24px;
 
   background-color: transparent;
   transition: transform 250ms ease-in-out;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 18px;
 
   color: #575756;
