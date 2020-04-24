@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BookForm from './BookForm';
-import { updateUserBook, deleteUserBook } from '../actions/userBooks';
-import { setBookDataForEdit, resetBookForm } from '../actions/bookForm';
+import { updateUserBook, deleteUserBook } from '../../actions/userBooks';
+import { setBookDataForEdit, resetBookForm } from '../../actions/bookForm';
 import { connect } from 'react-redux';
 
 class EditBookFormWrapper extends Component {

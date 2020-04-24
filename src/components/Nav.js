@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Logout from './Logout';
+import Logout from './users/Logout';
 import { NavLink } from 'react-router-dom';
 
 const Nav = ({ currentUser }) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieForm from './MovieForm';
-import { createUserMovie } from '../actions/userMovies';
+import { createUserMovie } from '../../actions/userMovies';
 import { connect } from 'react-redux';
 
 const NewMovieFormWrapper = ({ history, createUserMovie }) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { updateMovieForm } from '../actions/movieForm';
+import { updateMovieForm } from '../../actions/movieForm';
 import { connect } from 'react-redux';
 
 const MovieForm = ({ userId, formData, updateMovieForm,

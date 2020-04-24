@@ -5,17 +5,17 @@ import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser';
 import Nav from './components/Nav';
 import Home from './components/Home';
-import Login from './components/Login';
-import Signup from './components/Signup';
+import Login from './components/users/Login';
+import Signup from './components/users/Signup';
 import MainContainer from './components/MainContainer';
-import BooksContainer from './components/BooksContainer';
-import MoviesContainer from './components/MoviesContainer';
-import MovieCard from './components/MovieCard';
-import BookCard from './components/BookCard';
-import EditBookFormWrapper from './components/EditBookFormWrapper';
-import EditMovieFormWrapper from './components/EditMovieFormWrapper';
-import NewBookFormWrapper from './components/NewBookFormWrapper';
-import NewMovieFormWrapper from './components/NewMovieFormWrapper';
+import BooksContainer from './components/books/BooksContainer';
+import MoviesContainer from './components/movies/MoviesContainer';
+import MovieCard from './components/movies/MovieCard';
+import BookCard from './components/books/BookCard';
+import EditBookFormWrapper from './components/books/EditBookFormWrapper';
+import EditMovieFormWrapper from './components/movies/EditMovieFormWrapper';
+import NewBookFormWrapper from './components/books/NewBookFormWrapper';
+import NewMovieFormWrapper from './components/movies/NewMovieFormWrapper';
 import { Route, Switch, withRouter  } from 'react-router-dom';
 
 

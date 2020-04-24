@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import BookSearch from './BookSearch'
+import BookSearch from '../books/BookSearch';
 
 const BooksContainer = props => {
   const bookCards = props.books.length > 0 ?

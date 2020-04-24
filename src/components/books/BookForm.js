@@ -1,5 +1,5 @@
 import React from 'react';
-import { updateBookForm } from '../actions/bookForm';
+import { updateBookForm } from '../../actions/bookForm';
 import { connect } from 'react-redux';
 
 const BookForm = ({ userId, formData, updateBookForm,

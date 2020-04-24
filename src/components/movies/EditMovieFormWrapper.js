@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import MovieForm from './MovieForm';
 import { connect } from 'react-redux';
-import { updateUserMovie, deleteUserMovie } from '../actions/userMovies';
-import { setMovieDataForEdit, resetMovieForm } from '../actions/movieForm';
+import { updateUserMovie, deleteUserMovie } from '../../actions/userMovies';
+import { setMovieDataForEdit, resetMovieForm } from '../../actions/movieForm';
 
 class EditMovieFormWrapper extends Component {
 
