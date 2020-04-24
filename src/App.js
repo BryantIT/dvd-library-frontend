@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     const { loggedIn, userMovies, userBooks } = this.props
     return (
-      <div className="main w3-main w3-content w3-padding">
+      <div className="main w3-main w3-content">
         <Nav />
         <Switch>
           <Route exact path='/' render={()=> loggedIn ? <MainContainer/> : <Home/>} />

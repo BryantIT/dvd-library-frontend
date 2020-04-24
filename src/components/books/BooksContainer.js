@@ -26,7 +26,7 @@ const BooksContainer = props => {
   return (
     <div className="w3-row-padding w3-container w3-padding-32 w3-center">
         <BookSearch />
-        {bookCards}
+        
 
     </div>
   )

@@ -5,7 +5,7 @@ const BookSearch = ({ currentUser }) => {
   return (
     currentUser ?
     <div className="w3-margin-bottom">
-        <input className='search-button' type="submit" value="Search"/>
+        <input className='search-input' type="text" placeHolder="Search"/>
     </div> : ""
   )
 }
