@@ -27,7 +27,7 @@ class MoviesContainer extends Component {
   }
 
   render() {
-    const {term, movies} = this.state
+    const {term} = this.state
     return (
       <div className="w3-row-padding w3-container w3-padding-32 w3-center">
       <div className="search-container">

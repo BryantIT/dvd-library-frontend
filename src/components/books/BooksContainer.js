@@ -36,16 +36,20 @@ class BooksContainer extends Component {
           {
             this.props.books.sort((a, b) => a.attributes.title.localeCompare(b.attributes.title)).filter(searchParams(term)).map(t => (
               <div key={t.id} className="w3-quarter w3-margin-bottom">
+
                 <div className="box gallery">
                   <div className="card">
-                    <div className="background">
-                      <div className="info">
+                    <div className="background img-box" style={{backgroundImage: `url(${t.attributes.imageurl})`,
+                                                              backgroundPosition: 'center',
+                                                              backgroundSize: 'cover',
+                                                              backgroundRepeat: 'no-repeat'}}>
+                      <div className="info" >
                         <Link className="overlay" to={`/books/${t.id}`}></Link>
-                        <h2>{t.attributes.title}</h2>
-                        <p><small>by: </small>{t.attributes.author}</p>
+                        <h2 className="bg">{t.attributes.title}</h2>
+                        <p className="bg"><small>by: </small>{t.attributes.author}</p>
                         <div className="foot">
                           <i className="line"></i>
-                          <p>{t.attributes.description}</p>
+                          <p className="bg">{t.attributes.description}</p>
                         </div>
                       </div>
                     </div>

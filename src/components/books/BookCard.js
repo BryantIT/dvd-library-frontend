@@ -10,13 +10,14 @@ const BookCard = ({ book }) => {
           <div className="card">
             <div className="background">
               <div className="info">
-                <h3>{book.attributes.title}</h3>
-                <p><small>by: </small>{book.attributes.author}</p>
+                <h3 className="bg">{book.attributes.title}</h3>
+                <p className="bg"><small>by: </small>{book.attributes.author}</p>
                 <div className="foot">
                   <i className="line"></i>
-                    <p>{book.attributes.description}</p>
+                    <p className="bg">{book.attributes.description}</p>
                 </div>
               </div>
+              <img src={book.attributes.imageurl} alt={book} className="cover-sizing"/>
             </div>
           </div>
         </div>

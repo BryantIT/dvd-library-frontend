@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 const BookForm = ({ userId, formData, updateBookForm,
   book, handleSubmit, editMode }) => {
 
-  const {title, author, description} = formData
+  const {title, author, description, imageurl} = formData
 
   const handleChange = event => {
     const { name, value } = event.target
@@ -32,6 +32,9 @@ const BookForm = ({ userId, formData, updateBookForm,
                   onChange={handleChange} />
                 <input className='input-line full-width w3-xlarge'
                   placeholder="Author" name="author" type="text" value={author}
+                  onChange={handleChange} />
+                <input className='input-line full-width w3-xlarge'
+                  placeholder="Image Url" name="imageurl" type="text" value={imageurl}
                   onChange={handleChange} />
                 <textarea className='input-line full-width w3-xlarge'
                   placeholder="Description" name="description" value={description}

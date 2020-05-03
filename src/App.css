@@ -42,7 +42,7 @@ MENU STYLES
   background-color: #e90418;
   background-image: linear-gradient(19deg, #e90418 0%, #e90418 100%);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
-  border-radius: 15px; 
+  border-radius: 15px;
 }
 
 .menu__link{
@@ -395,16 +395,23 @@ input {
 CARDS
 ------------------------- */
 
+.bg{
+  background-color: #ffffff;
+}
+
+.cover-sizing{
+  height: 100%
+}
+
 .title{
   margin: 50px auto 0 auto;
-  text-align:center;
+  text-align: center;
   color: #fff;
   font-size: 32px;
 }
 
 .gallery.box{
   width: auto;
-  height: 450px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 1%;
@@ -431,7 +438,7 @@ CARDS
 	left:0;
 	right: 0;
 	opacity: 0;
-  background-color: #000;
+  background-color: rgb(255, 255, 255);
 	-webkit-transition: opacity 0.35s;
 	-o-transition: opacity 0.35s;
 	transition: opacity 0.35s;
@@ -501,5 +508,5 @@ CARDS
 }
 
 .gallery:hover .fa-camera-retro{
-  font-size:32px;
+  font-size: 32px;
 }

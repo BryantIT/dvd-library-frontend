@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 const MovieForm = ({ userId, formData, updateMovieForm,
   movie, handleSubmit, editMode }) => {
 
-  const {title, year, description} = formData
+  const {title, year, description, imageurl} = formData
 
   const handleChange = event => {
     const { name, value } = event.target
@@ -30,6 +30,9 @@ const MovieForm = ({ userId, formData, updateMovieForm,
                   onChange={handleChange} />
                 <input className='input-line full-width w3-xlarge'
                   placeholder="Release Year" name="year" type="text" value={year}
+                  onChange={handleChange} />
+                <input className='input-line full-width w3-xlarge'
+                  placeholder="Image Url" name="imageurl" type="text" value={imageurl}
                   onChange={handleChange} />
                 <textarea className='input-line full-width w3-xlarge'
                   placeholder="Description" name ="description" value={description}

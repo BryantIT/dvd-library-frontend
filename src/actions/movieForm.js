@@ -16,7 +16,8 @@ export const setMovieDataForEdit = movie => {
   const movieFormData ={
     title: movie.attributes.title,
     year: movie.attributes.author,
-    description: movie.attributes.description
+    description: movie.attributes.description,
+    imageurl: movie.attributes.imageurl
   }
   return {
     type: "SET_MOVIE_DATA_FOR_EDIT",

@@ -16,7 +16,8 @@ export const setBookDataForEdit = book => {
   const bookFormData = {
     title: book.attributes.title,
     author: book.attributes.author,
-    description: book.attributes.description
+    description: book.attributes.description,
+    imageurl: book.attributes.imageurl
   }
   return {
     type: "SET_BOOK_DATA_FOR_EDIT",
