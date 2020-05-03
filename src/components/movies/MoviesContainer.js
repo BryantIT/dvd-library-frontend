@@ -31,7 +31,7 @@ class MoviesContainer extends Component {
     return (
       <div className="w3-row-padding w3-container w3-padding-32 w3-center">
       <div className="search-container">
-          <input type="text" className="search-input" onChange={this.handleChange} value={term}></input>
+          <input placeholder="Search by Title" type="text" className="search-input" onChange={this.handleChange} value={term}></input>
       </div>
           {
             this.props.movies.sort((a, b) => a.attributes.title.localeCompare(b.attributes.title)).filter(searchParams(term)).map(t => (

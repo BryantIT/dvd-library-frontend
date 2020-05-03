@@ -9,6 +9,7 @@ function searchParams(term){
   }
 }
 
+
 class BooksContainer extends Component {
   constructor(props) {
     super(props)
@@ -31,12 +32,11 @@ class BooksContainer extends Component {
     return (
       <div className="w3-row-padding w3-container w3-padding-32 w3-center">
       <div className="search-container">
-          <input type="text" className="search-input" onChange={this.handleChange} value={term}></input>
+          <input placeholder="Search by Title" type="text" className="search-input" onChange={this.handleChange} value={term}></input>
       </div>
           {
             this.props.books.sort((a, b) => a.attributes.title.localeCompare(b.attributes.title)).filter(searchParams(term)).map(t => (
               <div key={t.id} className="w3-quarter w3-margin-bottom">
-
                 <div className="box gallery">
                   <div className="card">
                     <div className="background img-box" style={{backgroundImage: `url(${t.attributes.imageurl})`,
