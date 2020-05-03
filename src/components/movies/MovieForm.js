@@ -19,7 +19,7 @@ const MovieForm = ({ userId, formData, updateMovieForm,
         <div className='window'>
           <div className='overlay'></div>
           <div className='content'>
-            <div className='welcome'>Add A New Movie</div>
+            <div className='welcome'>{editMode ? "Update Movie" : "Add a New Movie"}</div>
             <div className='input-fields'>
               <form onSubmit={event => {
                   event.preventDefault()

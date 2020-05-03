@@ -13,9 +13,9 @@ export const resetMovieForm = () => {
 }
 
 export const setMovieDataForEdit = movie => {
-  const movieFormData ={
+  const movieFormData = {
     title: movie.attributes.title,
-    year: movie.attributes.author,
+    year: movie.attributes.year,
     description: movie.attributes.description,
     imageurl: movie.attributes.imageurl
   }

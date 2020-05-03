@@ -10,13 +10,14 @@ const MovieCard = ({ movie }) => {
             <div className="card">
               <div className="background">
                 <div className="info">
-                  <h3>{movie.attributes.title}</h3>
-                  <p>{movie.attributes.year}</p>
+                  <h3 className="bg">{movie.attributes.title}</h3>
+                  <p className="bg">{movie.attributes.year}</p>
                   <div className="foot">
                     <i className="line"></i>
-                      <p>{movie.attributes.description}</p>
+                      <p className="bg">{movie.attributes.description}</p>
                   </div>
                 </div>
+                <img src={movie.attributes.imageurl} alt={movie.attributes.title} className="cover-sizing"/>
               </div>
             </div>
           </div>

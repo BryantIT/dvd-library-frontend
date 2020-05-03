@@ -38,14 +38,17 @@ class MoviesContainer extends Component {
               <div key={t.id} className="w3-quarter w3-margin-bottom">
                 <div className="box gallery">
                   <div className="card">
-                    <div className="background">
+                    <div className="background img-box" style={{backgroundImage: `url(${t.attributes.imageurl})`,
+                                                              backgroundPosition: 'center',
+                                                              backgroundSize: 'cover',
+                                                              backgroundRepeat: 'no-repeat'}}>
                       <div className="info">
                         <Link className="overlay" to={`/movies/${t.id}`}></Link>
-                        <h2>{t.attributes.title}</h2>
-                        <p><small>by: </small>{t.attributes.year}</p>
+                        <h2 className="bg">{t.attributes.title}</h2>
+                        <p className="bg">{t.attributes.year}</p>
                         <div className="foot">
                           <i className="line"></i>
-                          <p>{t.attributes.description}</p>
+                          <p className="bg">{t.attributes.description}</p>
                         </div>
                       </div>
                     </div>
